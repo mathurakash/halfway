@@ -1,0 +1,77 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-sm-8">
+    <h3 class="text-white my-5">Home Page</h3>
+    {% for posts in posts  %}
+    <div class="jumbotron my-5 bg-white text-black">
+        <h1 class="display-4"><b>{{posts.title}}</b></h1>
+        <p class="lead">{{posts.desc}}</p>
+        <hr class="my-4">
+        <p>{{posts.post_date}}</p>
+        <p class="lead">
+          {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> {% endcomment %}
+        </p>
+      </div>
+      {% endfor %}
+</div>
+
+<div class="col-sm-4 ">
+  <h3 class="text-white my-5"><u>Other Projects</u></h3>
+  <div class="cards my-5">
+    <div class="card">
+      <img src="/static/blog/images/Capture3.PNG" alt="mypic" class="card__img">
+      <div class="card__info">
+       
+        <div>
+          <a href="https://aai-sih.firebaseapp.com/" class="btn btn-info my-3" target="_blank">Music Masti</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards my-5">
+    <div class="card">
+      <img src="/static/blog/images/Capture.PNG" alt="mypic" class="card__img">
+      <div class="card__info">
+       
+        <div>
+          <a href="https://web-invoicing.web.app/" class="btn btn-info my-3" target="_blank">Invoice Generation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cards my-5">
+    <div class="card">
+      <img src="/static/blog/images/Capture1.PNG" alt="mypic" class="card__img">
+      <div class="card__info">
+       
+        <div>
+          <a href="https://www.thecodesure.com/" class="btn btn-info my-3" target="_blank">The CodeSure</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="cards my-5">
+    <div class="card">
+      <img src="/static/blog/images/aai.PNG" alt="mypic" class="card__img">
+      <div class="card__info">
+       
+        <div>
+          <a href="https://aai-sih.firebaseapp.com/" class="btn btn-info my-3" target="_blank">Airport Authority of India</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock content %}
