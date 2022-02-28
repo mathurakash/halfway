@@ -9,7 +9,7 @@ from django.contrib.admin.widgets import AdminDateWidget
 from .models import Post
 
 
-
+#Signup form
 class SignUpForm(UserCreationForm):
     password1=forms.CharField(label="Password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
     password2=forms.CharField(label="Confirm Password(again)",widget=forms.PasswordInput(attrs={'class':'form-control'}))
