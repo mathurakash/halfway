@@ -25,7 +25,7 @@ image==1.5.33
 oauthlib==3.0.1
 Pillow==9.0.1
 platformdirs==2.4.0
-pycodestyle==2.5.0
+pycodestyle
 PyJWT==2.3.0
 PyMySQL==1.0.2
 python-decouple==3.1
