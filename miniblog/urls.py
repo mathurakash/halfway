@@ -1,9 +1,11 @@
+from ast import pattern
 from django.contrib import admin
 from django.urls import path
 from blog import views
 from django.urls import path,include
 from django.views.static import serve as mediaserve
 from django.conf import settings
+from miniblog import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
@@ -23,6 +25,9 @@ urlpatterns = [
     path('delete_post/<int:pk>',views.delete_post,name="deletepost"),
 
 ]
+urlpatterns += pattern('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
 
 urlpatterns.append(url(f'^{settings.MEDIA_URL.lstrip("/")}(?P<path>.*)$', mediaserve, {'document_root': settings.MEDIA_ROOT}))
 
