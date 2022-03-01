@@ -25,3 +25,11 @@ urlpatterns = [
     path('delete_post/<int:pk>',views.delete_post,name="deletepost"),
 
 ]
+
+urlpatterns.append(url(f'^{settings.MEDIA_URL.lstrip("/")}(?P<path>.*)$', mediaserve, {'document_root': settings.MEDIA_ROOT}))
+
+if settings.DEBUG: # media
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG: # static
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
