@@ -25,9 +25,9 @@ urlpatterns = [
     path('delete_post/<int:pk>',views.delete_post,name="deletepost"),
 
 ]
-urlpatterns += pattern('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
+# urlpatterns += pattern('',
+#         (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+#     )
 
 urlpatterns.append(url(f'^{settings.MEDIA_URL.lstrip("/")}(?P<path>.*)$', mediaserve, {'document_root': settings.MEDIA_ROOT}))
 

@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 import os
 
 from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise()
+
+import miniblog
+application = DjangoWhiteNoise(miniblog)
 
 from django.core.wsgi import get_wsgi_application
 
